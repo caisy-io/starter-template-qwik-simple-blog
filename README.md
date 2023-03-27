@@ -1,65 +1,57 @@
-# Qwik City App ⚡️
+# Simple blog starter template with Qwik and caisy
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+### Features
 
----
+- ✅ 100/100 Lighthouse performance
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Dynamic content updates from caisy without redeployment
 
-## Project Structure
+## Requirements
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just a extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
+In order to have the right blueprints configured, make sure to follow the onboarind on [caisy.io](https://caisy.io/) and select the starter template _"Qwik Simple Blog"_
+To run this project a `.env` file like this (with your own projects values) is required:
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+CAISY_PROJECT_ID=xxxx-xxxx-xxxx-xxxx-xxx
+CAISY_API_KEY=xxxx
 ```
 
-- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+### To run this project locally
 
-- `src/components`: Recommended directory for components.
+- [ ] `git clone https://github.com/caisy-io/starter-template-qwik-simple-blog.git`
+- [ ] create `.env` file with your project id and API key - see `.env.sample`
+- [ ] `yarn install`
+- [ ] `yarn start`
+- [ ] `yarn gen` to fetch the schema types from your project
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+In order to have the right blueprints configured, make sure to follow the onboarind and select the starter template "Simple Blog"
 
-## Add Integrations and deployment
+### We are using
 
-Use the `yarn qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+- Qwik as server and server side rendering framework
+- tailwindcss for styling
+- @caisy/rich-text-qwik-renderer to render the caisy richtexts in react
+- graphql and graphql-request to fetch data from caisy
 
-```shell
-yarn qwik add # or `yarn qwik add`
-```
+#### Codegen
 
-## Development
+During development we generate code using
 
-Development mode uses [Vite's development server](https://vitejs.dev/). During development, the `dev` command will server-side render (SSR) the output.
+- @graphql-codegen/cli and plugins
 
-```shell
-npm start # or `yarn start`
-```
+### 🧞 Commands
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+All commands are run from the root of the project, from a terminal:
 
-## Preview
+| Command              | Action                                                   |
+| :------------------- | :------------------------------------------------------- |
+| `yarn install`       | Installs dependencies                                    |
+| `yarn start`         | Starts local dev server at `localhost:5173`              |
+| `yarn gen`           | Regenerates generated types and SDK                      |
+| `yarn run gen:watch` | Wachting changes and regenerates generated types and SDK |
+| `yarn build`         | Build your production site to `./dist/`                  |
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to locally preview a production build, and it should not be used as a production server.
+## 👀 Want to learn more?
 
-```shell
-yarn preview # or `yarn preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. Additionally, the build command will use Typescript to run a type check on the source code.
-
-```shell
-yarn build # or `yarn build`
-```
+Feel free to check [caisy documentation](https://caisy.io/developer/docs)
+Feel free to check [Next.js documentation](https://nextjs.org/docs)
