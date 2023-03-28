@@ -2,6 +2,7 @@ import { getProps, EPageType } from "../services/content/getProps";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { useResPage } from "./layout";
+
 export { default } from "./[slug]/index";
 
 export const useResNotFoundPage = routeLoader$(async () => {
