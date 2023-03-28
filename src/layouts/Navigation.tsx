@@ -6,9 +6,7 @@ import { useLocation } from "@builder.io/qwik-city";
 export const Navigation = component$<IGenNavigation>(
   ({ entries, homePage }) => {
     const loc = useLocation();
-    const slug = loc.pathname.replaceAll("/", "");
-
-    // console.log({ ent: entries?.[0], slug, homeSlug: homePage?.slug });
+    const slug = loc.url.pathname.replace(/\//g, "");
 
     return (
       <header class="flex flex-wrap m-10 z-50 bg-white text-sm">
