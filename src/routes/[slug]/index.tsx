@@ -1,30 +1,28 @@
 import { DefaultSpacer } from "../../components/DefaultSpacer";
 import { Page } from "../../layouts/Page";
-// import type { IGenBlogArticle } from "@/services/graphql/__generated/sdk";
 import type { IGenBlogArticle } from "../../services/graphql/__generated/sdk";
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
-import { useNavigate } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
 import { useResPage } from "../layout";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
+import { getProps, EPageType } from "@/services/content/getProps";
 
 interface IQwikPage {
   BlogArticle?: IGenBlogArticle | null;
   is404?: boolean;
 }
 
-export default component$<IQwikPage>(() => {
-  const nav = useNavigate();
-  const resPage = useResPage();
-
-  useVisibleTask$(async ({ track }) => {
-    track(() => resPage?.value?.is404);
-    if (resPage?.value?.is404) {
-      console.log("redirect from home to 404");
-      if (resPage?.value?.is404) nav("/404");
-      if (resPage?.value?.redirectHome) nav("/");
-    }
+export const onGet: RequestHandler = async ({ params: { slug }, redirect }) => {
+  const { redirectHome, is404 } = await getProps({
+    slug,
+    pageType: EPageType.Index,
   });
+  if (is404 && !redirectHome) {
+    throw redirect(308, "/404");
+  }
+};
 
+export default component$<IQwikPage>(() => {
+  const resPage = useResPage();
   return resPage?.value?.Page ? (
     <>
       <Page {...resPage?.value?.Page} />

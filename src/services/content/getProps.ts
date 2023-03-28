@@ -6,7 +6,6 @@ export enum EPageType {
   Index = 3,
   NotFound = 4,
 }
-
 export const getProps = async ({
   slug,
   pageType = EPageType.Default,

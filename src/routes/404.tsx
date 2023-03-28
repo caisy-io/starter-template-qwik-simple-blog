@@ -1,17 +1,10 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
-import { useNavigate } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { useResNotFoundPage } from ".";
 import { Page } from "../layouts/Page";
 
 export default component$(() => {
-  const nav = useNavigate();
   const resPageNotFound = useResNotFoundPage();
-  useVisibleTask$(({ track }) => {
-    track(() => resPageNotFound?.value?.redirectHome);
-    if (resPageNotFound?.value?.redirectHome) nav("/");
-  });
-
   return (
     resPageNotFound?.value?.Page && (
       <>
@@ -24,6 +17,6 @@ export default component$(() => {
 export const head: DocumentHead = () => {
   const resPageNotFound = useResNotFoundPage();
   return {
-    title: resPageNotFound?.value?.Page?.seo?.title ?? ``,
+    title: resPageNotFound?.value?.Page?.seo?.title ?? `/404 Title-NotFound`,
   };
 };

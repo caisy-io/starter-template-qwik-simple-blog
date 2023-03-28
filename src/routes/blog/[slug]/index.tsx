@@ -1,24 +1,20 @@
-// import { GetStaticProps } from "next";
-// import Head from "next/head";
-// import Router from "next/router";
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
-import { useLocation, useNavigate } from "@builder.io/qwik-city";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
+import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
 import { DefaultSpacer } from "../../../components/DefaultSpacer";
 import { FullText } from "../../../components/fulltext/FullText";
 import { useResBlog } from "../../layout";
+import { getProps, EPageType } from "@/services/content/getProps";
+
+export const onGet: RequestHandler = async ({ params: { slug }, redirect }) => {
+  const { is404 } = await getProps({
+    slug,
+    pageType: EPageType.Blog,
+  });
+  if (is404) throw redirect(308, "/404");
+};
 
 export default component$(() => {
-  const nav = useNavigate();
-  const loc = useLocation();
   const resBlog = useResBlog();
-
-  useVisibleTask$(({ track }) => {
-    track(() => resBlog?.value?.is404);
-    if (resBlog?.value?.is404 && loc.url.pathname.includes("blog")) {
-      nav("/404");
-    }
-  });
   return (
     resBlog?.value?.BlogArticle && (
       <>
@@ -34,6 +30,6 @@ export default component$(() => {
 export const head: DocumentHead = ({ resolveValue }) => {
   const resBlog = resolveValue(useResBlog);
   return {
-    title: resBlog?.BlogArticle?.seo?.title ?? "",
+    title: resBlog?.BlogArticle?.seo?.title ?? "Blog Title NotFound",
   };
 };
