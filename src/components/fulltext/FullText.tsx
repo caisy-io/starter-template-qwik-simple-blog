@@ -1,6 +1,5 @@
 import { component$, $ } from "@builder.io/qwik";
 import RichTextRenderer from "@caisy/rich-text-qwik-renderer";
-// import { Asset } from "../Asset";
 import { CenterContainer } from "../CenterContainer";
 import { DocumentLink } from "./overwrites/DocumentLink";
 
