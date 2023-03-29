@@ -20,8 +20,7 @@ export const getProps = async ({
     const Navigation = (await navigationRequest)?.Navigation;
     slug = Navigation?.homePage?.slug ?? undefined;
   }
-
-  if (slug === undefined && pageType == EPageType.NotFound) {
+  if (!slug === undefined && pageType == EPageType.NotFound) {
     const Navigation = (await navigationRequest)?.Navigation;
     slug = Navigation?.notFoundPage?.slug ?? undefined;
     console.log(`NotFound slug`, slug);

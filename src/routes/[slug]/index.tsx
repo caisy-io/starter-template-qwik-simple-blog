@@ -16,13 +16,18 @@ interface IQwikPage {
   is404?: boolean;
 }
 
-export const onGet: RequestHandler = async ({ params: { slug }, redirect }) => {
+export const onGet: RequestHandler = async ({
+  params: { slug },
+  redirect,
+  status,
+}) => {
   const { redirectHome, is404 } = await getProps({
     slug,
     pageType: EPageType.Index,
   });
   if (is404 && !redirectHome) {
-    throw redirect(308, "/404");
+    status(404);
+    throw redirect(308, "/404/");
   }
 };
 
