@@ -1,7 +1,8 @@
+// import { component$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { getAllBlogArticles } from "../services/content/getAllBlogArticle";
-import { getAllPages } from "../services/content/getAllPages";
-import { caisySDK } from "../services/graphql/getSdk";
+import { getAllBlogArticles } from "../../services/content/getAllBlogArticle";
+import { getAllPages } from "../../services/content/getAllPages";
+import { caisySDK } from "../../services/graphql/getSdk";
 
 const Sitemap = () => {
   return null;
@@ -9,8 +10,10 @@ const Sitemap = () => {
 
 export const onGet: RequestHandler = async (req): Promise<any> => {
   const baseUrl = `https://${
-    req.headers["host"] || req.headers["x-forwarded-host"]
+    req.request.headers.get("host") ||
+    req.request.headers.get("x-forwarded-host")
   }`;
+
   const navigationRequest = caisySDK.Navigation();
 
   const [allPages, allBlogArticles] = await Promise.all([
@@ -72,6 +75,12 @@ export const onGet: RequestHandler = async (req): Promise<any> => {
     `</urlset>`,
   ].join("\n");
 
+  const writableStream = req.getWritableStream();
+  const writer = writableStream.getWriter();
+  const enc = new TextEncoder(); // always utf-8
+  writer.write(enc.encode(sitemap));
+  writer.close();
+
   return {
     status: 200,
     headers: {
@@ -81,5 +90,4 @@ export const onGet: RequestHandler = async (req): Promise<any> => {
     body: sitemap,
   };
 };
-
 export default Sitemap;

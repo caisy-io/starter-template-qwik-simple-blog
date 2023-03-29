@@ -4,12 +4,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { useResPage } from "./layout";
 export { default } from "./[slug]/index";
 
-// export const onGet: RequestHandler = async (req) => {
-//   console.log(await sitemapBody({ req }));
-
-//   return;
-// };
-
 export const useResNotFoundPage = routeLoader$(async () => {
   const resPage = await getProps({ pageType: EPageType.NotFound });
   return {

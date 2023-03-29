@@ -8,9 +8,12 @@ export const onGet: RequestHandler = async ({
   headers,
   text,
   exit,
+  request,
 }): Promise<any> => {
   console.log();
-  const baseUrl = `https://${headers["host"] || headers["x-forwarded-host"]}`;
+  const baseUrl = `https://${
+    request.headers.get("host") || request.headers.get("x-forwarded-host")
+  }`;
 
   const robots = `# *
   User-agent: *
@@ -20,7 +23,7 @@ export const onGet: RequestHandler = async ({
   Host: ${baseUrl}
   
   # Sitemaps
-  Sitemap: ${baseUrl}/sitemap.xml
+  Sitemap: ${baseUrl}/sitemap/
   `;
 
   headers.set("Content-Type", "text/plain");
