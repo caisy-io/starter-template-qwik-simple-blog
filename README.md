@@ -30,7 +30,7 @@ In order to have the right blueprints configured, make sure to follow the onboar
 
 - Qwik as server and server side rendering framework
 - tailwindcss for styling
-- @caisy/rich-text-qwik-renderer to render the caisy richtexts in react
+- @caisy/rich-text-qwik-renderer to render the caisy richtexts in Qwik
 - graphql and graphql-request to fetch data from caisy
 
 #### Codegen
