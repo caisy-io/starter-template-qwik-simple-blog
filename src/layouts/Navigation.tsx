@@ -20,15 +20,15 @@ export const Navigation = component$<IGenNavigation>(
 
                 return (
                   <Link
+                    prefetch
                     key={entry.id}
-                    href={`/${entry.connection?.slug}`}
+                    href={`/${entry.connection?.slug}/`}
                     class={`font-medium ${
                       entry.connection?.slug === slug ||
                       (slug === "" && entry.connection?.slug === homePage?.slug)
                         ? "text-blue-500"
                         : "text-gray-600 hover:text-gray-400"
                     }`}
-                    aria-current="page"
                   >
                     {entry?.title}
                   </Link>

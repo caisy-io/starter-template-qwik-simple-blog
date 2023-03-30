@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import type { IGenBlogArticle } from "../../services/graphql/__generated/sdk";
 
 export const ArticleCard = component$<IGenBlogArticle>(
@@ -21,7 +22,7 @@ export const ArticleCard = component$<IGenBlogArticle>(
             {teaserHeadline}
           </h2>
           <p class="text-base text-left text-gray-600">{teaserDesciption}</p>
-          <a href={`/blog/${slug}`} class="pointer">
+          <Link href={`/blog/${slug}`} class="pointer">
             <div class="flex justify-start items-start">
               <div class="flex justify-center items-center relative overflow-hidden gap-2 rounded-md bg-white">
                 <p class="text-[15px] font-semibold text-center text-blue-600">
@@ -45,7 +46,7 @@ export const ArticleCard = component$<IGenBlogArticle>(
                 </svg>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     );

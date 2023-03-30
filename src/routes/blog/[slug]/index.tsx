@@ -1,9 +1,14 @@
 import { component$ } from "@builder.io/qwik";
-import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
+import type {
+  RequestHandler,
+  DocumentHead,
+  StaticGenerateHandler,
+} from "@builder.io/qwik-city";
 import { DefaultSpacer } from "../../../components/DefaultSpacer";
 import { FullText } from "../../../components/fulltext/FullText";
 import { useResBlog } from "../../layout";
 import { getProps, EPageType } from "@/services/content/getProps";
+import { getAllBlogArticles } from "@/services/content/getAllBlogArticle";
 
 export const onGet: RequestHandler = async ({ params: { slug }, redirect }) => {
   const { is404 } = await getProps({
@@ -26,6 +31,16 @@ export default component$(() => {
     )
   );
 });
+
+export const onStaticGenerate: StaticGenerateHandler = async () => {
+  const slugs: any[] = (await getAllBlogArticles({})).map((page) => page?.slug);
+
+  return {
+    params: slugs?.map((slug) => ({
+      slug,
+    })),
+  };
+};
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const resBlog = resolveValue(useResBlog);

@@ -1956,6 +1956,7 @@ export const AllPageMetaDocument = gql`
     }
   }
 `;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type Requester<C = {}, E = unknown> = <R, V>(
   doc: DocumentNode,
   vars?: V,

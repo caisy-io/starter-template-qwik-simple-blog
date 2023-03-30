@@ -3,8 +3,13 @@ import { Page } from "../../layouts/Page";
 import type { IGenBlogArticle } from "../../services/graphql/__generated/sdk";
 import { component$ } from "@builder.io/qwik";
 import { useResPage } from "../layout";
-import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
+import type {
+  RequestHandler,
+  DocumentHead,
+  StaticGenerateHandler,
+} from "@builder.io/qwik-city";
 import { getProps, EPageType } from "@/services/content/getProps";
+import { getAllPages } from "@/services/content/getAllPages";
 
 interface IQwikPage {
   BlogArticle?: IGenBlogArticle | null;
@@ -37,6 +42,16 @@ export default component$<IQwikPage>(() => {
     <></>
   );
 });
+
+export const onStaticGenerate: StaticGenerateHandler = async () => {
+  const slugs: any[] = (await getAllPages({})).map((page) => page?.slug);
+
+  return {
+    params: slugs?.map((slug) => ({
+      slug,
+    })),
+  };
+};
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const resPage = resolveValue(useResPage);
