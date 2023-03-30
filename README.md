@@ -1,10 +1,15 @@
 # Simple blog starter template with Qwik and caisy
 
+Deploy Template to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcaisy-io%2Fstarter-template-qwik-simple-blog&env=CAISY_PROJECT_ID,CAISY_API_KEY&envDescription=https%3A%2F%2Fcaisy.io%2Fdeveloper%2Fdocs%2Fexamples&project-name=starter-template-qwik-simple-blog&repository-name=starter-template-qwik-simple-blog)
+
 ### Features
 
 - ✅ 100/100 Lighthouse performance
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Dynamic content updates from caisy without redeployment
+- ✅ Sitemap support
 
 ## Requirements
 
