@@ -60,3 +60,9 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [caisy documentation](https://caisy.io/developer/docs)
 Feel free to check [Next.js documentation](https://nextjs.org/docs)
+
+## Static Site Generator (Node.js)
+
+```
+yarn build.server
+```
