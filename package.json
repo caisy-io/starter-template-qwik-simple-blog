@@ -1,7 +1,7 @@
 {
   "type": "module",
-  "name": "my-qwik-basic-starter",
-  "description": "App with Routing built-in (recommended)",
+  "name": "caisy-starter-template-qwik-simple-blog",
+  "description": "caisy starter template for a simple blog with qwik and qwik city as frameworks",
   "engines": {
     "node": ">=16.0.0"
   },
