@@ -181,7 +181,18 @@ type Author {
   _meta: CaisyDocument_Meta
 
   """"""
-  avatar(locale: String): Asset
+  avatar(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Asset
 
   """"""
   id: ID
@@ -271,16 +282,49 @@ type BlogArticle {
   _meta: CaisyDocument_Meta
 
   """"""
-  author(locale: String): Author
+  author(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Author
 
   """"""
-  category(locale: String): Category
+  category(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Category
 
   """"""
   id: ID
 
   """"""
-  seo(locale: String): SeoInformation
+  seo(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): SeoInformation
 
   """"""
   slug: String
@@ -292,7 +336,18 @@ type BlogArticle {
   teaserHeadline: String
 
   """"""
-  teaserImage(locale: String): Asset
+  teaserImage(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Asset
 
   """"""
   text(locale: String): BlogArticle_text
@@ -304,7 +359,18 @@ type BlogArticleGrid {
   _meta: CaisyDocument_Meta
 
   """"""
-  articles(locale: String): [BlogArticleGrid_articles]
+  articles(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [BlogArticleGrid_articles]
 
   """"""
   headline: String
@@ -529,7 +595,18 @@ input BlogArticle_Where {
 """"""
 type BlogArticle_text {
   """"""
-  connections: [BlogArticle_text_Connections]
+  connections(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [BlogArticle_text_Connections]
 
   """"""
   json: JSON
@@ -786,7 +863,18 @@ input Footer_UpdateInput {
 """"""
 type Footer_content {
   """"""
-  connections: [Footer_content_Connections]
+  connections(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [Footer_content_Connections]
 
   """"""
   json: JSON
@@ -873,7 +961,18 @@ input Fulltext_Where {
 """"""
 type Fulltext_text {
   """"""
-  connections: [Fulltext_text_Connections]
+  connections(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [Fulltext_text_Connections]
 
   """"""
   json: JSON
@@ -888,7 +987,18 @@ type FullwidthBlogTeaser {
   _meta: CaisyDocument_Meta
 
   """"""
-  featuredArticle(locale: String): BlogArticle
+  featuredArticle(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): BlogArticle
 
   """"""
   id: ID
@@ -1422,16 +1532,49 @@ type Navigation {
   _meta: CaisyDocument_Meta
 
   """"""
-  entries(locale: String): [Navigation_entries]
+  entries(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [Navigation_entries]
 
   """"""
-  homePage(locale: String): Page
+  homePage(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Page
 
   """"""
   id: ID
 
   """"""
-  notFoundPage(locale: String): Page
+  notFoundPage(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Page
 
   """"""
   titleInternal: String
@@ -1443,7 +1586,18 @@ type NavigationEntry {
   _meta: CaisyDocument_Meta
 
   """"""
-  connection(locale: String): Page
+  connection(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Page
 
   """"""
   id: ID
@@ -1653,13 +1807,35 @@ type Page {
   _meta: CaisyDocument_Meta
 
   """"""
-  components(locale: String): [Page_components]
+  components(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): [Page_components]
 
   """"""
   id: ID
 
   """"""
-  seo(locale: String): SeoInformation
+  seo(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): SeoInformation
 
   """"""
   slug: String
@@ -1869,7 +2045,18 @@ type SeoInformation {
   keywords: String
 
   """"""
-  ogImage(locale: String): Asset
+  ogImage(
+    """
+    The cursor to start the pagination from. In this case the curser equals the id for the (last) element. If not set, we wil start from the beginning.
+    """
+    after: String
+
+    """The number of items to return. Default and max value is 100."""
+    first: Int = 100
+
+    """"""
+    locale: String
+  ): Asset
 
   """"""
   title: String

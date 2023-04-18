@@ -1,16 +1,10 @@
-import type { DocumentNode } from "graphql";
-import gql from "graphql-tag";
+import { DocumentNode } from 'graphql';
+import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -23,43 +17,43 @@ export type Scalars = {
 };
 
 export type IGenAsset = {
-  __typename?: "Asset";
+  __typename?: 'Asset';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  author?: Maybe<Scalars["String"]>;
-  copyright?: Maybe<Scalars["String"]>;
-  description?: Maybe<Scalars["String"]>;
-  dominantColor?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  keywords?: Maybe<Scalars["String"]>;
-  originType?: Maybe<Scalars["String"]>;
-  originalName?: Maybe<Scalars["String"]>;
-  src?: Maybe<Scalars["String"]>;
-  title?: Maybe<Scalars["String"]>;
+  author?: Maybe<Scalars['String']>;
+  copyright?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  dominantColor?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  keywords?: Maybe<Scalars['String']>;
+  originType?: Maybe<Scalars['String']>;
+  originalName?: Maybe<Scalars['String']>;
+  src?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
 };
 
 export type IGenAsset_Connection = {
-  __typename?: "Asset_Connection";
+  __typename?: 'Asset_Connection';
   edges?: Maybe<Array<Maybe<IGenAsset_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenAsset_ConnectionEdge = {
-  __typename?: "Asset_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Asset_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenAsset>;
 };
 
 export type IGenAsset_CreateInput = {
-  author?: InputMaybe<Scalars["String"]>;
-  copyright?: InputMaybe<Scalars["String"]>;
-  description?: InputMaybe<Scalars["String"]>;
-  dominantColor?: InputMaybe<Scalars["String"]>;
-  keywords?: InputMaybe<Scalars["String"]>;
-  originType?: InputMaybe<Scalars["String"]>;
-  originalName?: InputMaybe<Scalars["String"]>;
-  src?: InputMaybe<Scalars["String"]>;
-  title?: InputMaybe<Scalars["String"]>;
+  author?: InputMaybe<Scalars['String']>;
+  copyright?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  dominantColor?: InputMaybe<Scalars['String']>;
+  keywords?: InputMaybe<Scalars['String']>;
+  originType?: InputMaybe<Scalars['String']>;
+  originalName?: InputMaybe<Scalars['String']>;
+  src?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenAsset_Sort = {
@@ -74,15 +68,15 @@ export type IGenAsset_Sort = {
 };
 
 export type IGenAsset_UpdateInput = {
-  author?: InputMaybe<Scalars["String"]>;
-  copyright?: InputMaybe<Scalars["String"]>;
-  description?: InputMaybe<Scalars["String"]>;
-  dominantColor?: InputMaybe<Scalars["String"]>;
-  keywords?: InputMaybe<Scalars["String"]>;
-  originType?: InputMaybe<Scalars["String"]>;
-  originalName?: InputMaybe<Scalars["String"]>;
-  src?: InputMaybe<Scalars["String"]>;
-  title?: InputMaybe<Scalars["String"]>;
+  author?: InputMaybe<Scalars['String']>;
+  copyright?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  dominantColor?: InputMaybe<Scalars['String']>;
+  keywords?: InputMaybe<Scalars['String']>;
+  originType?: InputMaybe<Scalars['String']>;
+  originalName?: InputMaybe<Scalars['String']>;
+  src?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenAsset_Where = {
@@ -99,35 +93,38 @@ export type IGenAsset_Where = {
 };
 
 export type IGenAuthor = {
-  __typename?: "Author";
+  __typename?: 'Author';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   avatar?: Maybe<IGenAsset>;
-  id?: Maybe<Scalars["ID"]>;
-  name?: Maybe<Scalars["String"]>;
-  role?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenAuthorAvatarArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenAuthor_Connection = {
-  __typename?: "Author_Connection";
+  __typename?: 'Author_Connection';
   edges?: Maybe<Array<Maybe<IGenAuthor_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenAuthor_ConnectionEdge = {
-  __typename?: "Author_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Author_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenAuthor>;
 };
 
 export type IGenAuthor_CreateInput = {
-  avatar?: InputMaybe<Scalars["ID"]>;
-  name?: InputMaybe<Scalars["String"]>;
-  role?: InputMaybe<Scalars["String"]>;
+  avatar?: InputMaybe<Scalars['ID']>;
+  name?: InputMaybe<Scalars['String']>;
+  role?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenAuthor_Sort = {
@@ -137,9 +134,9 @@ export type IGenAuthor_Sort = {
 };
 
 export type IGenAuthor_UpdateInput = {
-  avatar?: InputMaybe<Scalars["ID"]>;
-  name?: InputMaybe<Scalars["String"]>;
-  role?: InputMaybe<Scalars["String"]>;
+  avatar?: InputMaybe<Scalars['ID']>;
+  name?: InputMaybe<Scalars['String']>;
+  role?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenAuthor_Where = {
@@ -150,71 +147,87 @@ export type IGenAuthor_Where = {
 };
 
 export type IGenBlogArticle = {
-  __typename?: "BlogArticle";
+  __typename?: 'BlogArticle';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   author?: Maybe<IGenAuthor>;
   category?: Maybe<IGenCategory>;
-  id?: Maybe<Scalars["ID"]>;
+  id?: Maybe<Scalars['ID']>;
   seo?: Maybe<IGenSeoInformation>;
-  slug?: Maybe<Scalars["String"]>;
-  teaserDesciption?: Maybe<Scalars["String"]>;
-  teaserHeadline?: Maybe<Scalars["String"]>;
+  slug?: Maybe<Scalars['String']>;
+  teaserDesciption?: Maybe<Scalars['String']>;
+  teaserHeadline?: Maybe<Scalars['String']>;
   teaserImage?: Maybe<IGenAsset>;
   text?: Maybe<IGenBlogArticle_Text>;
 };
 
+
 export type IGenBlogArticleAuthorArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenBlogArticleCategoryArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenBlogArticleSeoArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenBlogArticleTeaserImageArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type IGenBlogArticleTextArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenBlogArticleGrid = {
-  __typename?: "BlogArticleGrid";
+  __typename?: 'BlogArticleGrid';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   articles?: Maybe<Array<Maybe<IGenBlogArticleGrid_Articles>>>;
-  headline?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  subheadline?: Maybe<Scalars["String"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  headline?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  subheadline?: Maybe<Scalars['String']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenBlogArticleGridArticlesArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenBlogArticleGrid_Connection = {
-  __typename?: "BlogArticleGrid_Connection";
+  __typename?: 'BlogArticleGrid_Connection';
   edges?: Maybe<Array<Maybe<IGenBlogArticleGrid_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenBlogArticleGrid_ConnectionEdge = {
-  __typename?: "BlogArticleGrid_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'BlogArticleGrid_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenBlogArticleGrid>;
 };
 
 export type IGenBlogArticleGrid_CreateInput = {
-  articles?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  articles?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenBlogArticleGrid_Sort = {
@@ -225,10 +238,10 @@ export type IGenBlogArticleGrid_Sort = {
 };
 
 export type IGenBlogArticleGrid_UpdateInput = {
-  articles?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  articles?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenBlogArticleGrid_Where = {
@@ -242,27 +255,27 @@ export type IGenBlogArticleGrid_Where = {
 export type IGenBlogArticleGrid_Articles = IGenBlogArticle;
 
 export type IGenBlogArticle_Connection = {
-  __typename?: "BlogArticle_Connection";
+  __typename?: 'BlogArticle_Connection';
   edges?: Maybe<Array<Maybe<IGenBlogArticle_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenBlogArticle_ConnectionEdge = {
-  __typename?: "BlogArticle_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'BlogArticle_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenBlogArticle>;
 };
 
 export type IGenBlogArticle_CreateInput = {
-  author?: InputMaybe<Scalars["ID"]>;
-  category?: InputMaybe<Scalars["ID"]>;
-  seo?: InputMaybe<Scalars["ID"]>;
-  slug?: InputMaybe<Scalars["String"]>;
-  teaserDesciption?: InputMaybe<Scalars["String"]>;
-  teaserHeadline?: InputMaybe<Scalars["String"]>;
-  teaserImage?: InputMaybe<Scalars["ID"]>;
-  text?: InputMaybe<Scalars["JSON"]>;
+  author?: InputMaybe<Scalars['ID']>;
+  category?: InputMaybe<Scalars['ID']>;
+  seo?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  teaserDesciption?: InputMaybe<Scalars['String']>;
+  teaserHeadline?: InputMaybe<Scalars['String']>;
+  teaserImage?: InputMaybe<Scalars['ID']>;
+  text?: InputMaybe<Scalars['JSON']>;
 };
 
 export type IGenBlogArticle_Sort = {
@@ -276,14 +289,14 @@ export type IGenBlogArticle_Sort = {
 };
 
 export type IGenBlogArticle_UpdateInput = {
-  author?: InputMaybe<Scalars["ID"]>;
-  category?: InputMaybe<Scalars["ID"]>;
-  seo?: InputMaybe<Scalars["ID"]>;
-  slug?: InputMaybe<Scalars["String"]>;
-  teaserDesciption?: InputMaybe<Scalars["String"]>;
-  teaserHeadline?: InputMaybe<Scalars["String"]>;
-  teaserImage?: InputMaybe<Scalars["ID"]>;
-  text?: InputMaybe<Scalars["JSON"]>;
+  author?: InputMaybe<Scalars['ID']>;
+  category?: InputMaybe<Scalars['ID']>;
+  seo?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  teaserDesciption?: InputMaybe<Scalars['String']>;
+  teaserHeadline?: InputMaybe<Scalars['String']>;
+  teaserImage?: InputMaybe<Scalars['ID']>;
+  text?: InputMaybe<Scalars['JSON']>;
 };
 
 export type IGenBlogArticle_Where = {
@@ -296,69 +309,76 @@ export type IGenBlogArticle_Where = {
 };
 
 export type IGenBlogArticle_Text = {
-  __typename?: "BlogArticle_text";
+  __typename?: 'BlogArticle_text';
   connections?: Maybe<Array<Maybe<IGenBlogArticle_Text_Connections>>>;
-  json?: Maybe<Scalars["JSON"]>;
+  json?: Maybe<Scalars['JSON']>;
+};
+
+
+export type IGenBlogArticle_TextConnectionsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenBlogArticle_Text_Connections = IGenAsset;
 
 export type IGenCaisyDocument_Meta = {
-  __typename?: "CaisyDocument_Meta";
-  createdAt?: Maybe<Scalars["DateTime"]>;
-  id?: Maybe<Scalars["ID"]>;
-  locale?: Maybe<Scalars["String"]>;
-  locales?: Maybe<Array<Maybe<Scalars["String"]>>>;
-  publishedAt?: Maybe<Scalars["DateTime"]>;
-  updatedAt?: Maybe<Scalars["DateTime"]>;
+  __typename?: 'CaisyDocument_Meta';
+  createdAt?: Maybe<Scalars['DateTime']>;
+  id?: Maybe<Scalars['ID']>;
+  locale?: Maybe<Scalars['String']>;
+  locales?: Maybe<Array<Maybe<Scalars['String']>>>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
 };
 
 export type IGenCaisyField_Color_Where = {
-  contains?: InputMaybe<Scalars["String"]>;
-  eq?: InputMaybe<Scalars["String"]>;
-  neq?: InputMaybe<Scalars["String"]>;
+  contains?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  neq?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenCaisyField_Richtext_Where = {
-  contains?: InputMaybe<Scalars["String"]>;
-  eq?: InputMaybe<Scalars["String"]>;
-  neq?: InputMaybe<Scalars["String"]>;
+  contains?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  neq?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenCaisyField_String_Where = {
-  contains?: InputMaybe<Scalars["String"]>;
-  eq?: InputMaybe<Scalars["String"]>;
-  neq?: InputMaybe<Scalars["String"]>;
+  contains?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  neq?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenCaisy_Field_Document_NotFound = {
-  __typename?: "Caisy_Field_Document_NotFound";
-  id?: Maybe<Scalars["ID"]>;
-  message?: Maybe<Scalars["String"]>;
+  __typename?: 'Caisy_Field_Document_NotFound';
+  id?: Maybe<Scalars['ID']>;
+  message?: Maybe<Scalars['String']>;
 };
 
 export type IGenCategory = {
-  __typename?: "Category";
+  __typename?: 'Category';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  id?: Maybe<Scalars["ID"]>;
-  name?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
 };
 
 export type IGenCategory_Connection = {
-  __typename?: "Category_Connection";
+  __typename?: 'Category_Connection';
   edges?: Maybe<Array<Maybe<IGenCategory_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenCategory_ConnectionEdge = {
-  __typename?: "Category_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Category_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenCategory>;
 };
 
 export type IGenCategory_CreateInput = {
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenCategory_Sort = {
@@ -366,7 +386,7 @@ export type IGenCategory_Sort = {
 };
 
 export type IGenCategory_UpdateInput = {
-  name?: InputMaybe<Scalars["String"]>;
+  name?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenCategory_Where = {
@@ -376,29 +396,29 @@ export type IGenCategory_Where = {
 };
 
 export type IGenContactForm = {
-  __typename?: "ContactForm";
+  __typename?: 'ContactForm';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  headline?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  headline?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
 export type IGenContactForm_Connection = {
-  __typename?: "ContactForm_Connection";
+  __typename?: 'ContactForm_Connection';
   edges?: Maybe<Array<Maybe<IGenContactForm_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenContactForm_ConnectionEdge = {
-  __typename?: "ContactForm_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'ContactForm_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenContactForm>;
 };
 
 export type IGenContactForm_CreateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenContactForm_Sort = {
@@ -407,8 +427,8 @@ export type IGenContactForm_Sort = {
 };
 
 export type IGenContactForm_UpdateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenContactForm_Where = {
@@ -419,63 +439,72 @@ export type IGenContactForm_Where = {
 };
 
 export type IGenFooter = {
-  __typename?: "Footer";
+  __typename?: 'Footer';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   content?: Maybe<IGenFooter_Content>;
-  id?: Maybe<Scalars["ID"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars['ID']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenFooterContentArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFooter_CreateInput = {
-  content?: InputMaybe<Scalars["JSON"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['JSON']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFooter_UpdateInput = {
-  content?: InputMaybe<Scalars["JSON"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  content?: InputMaybe<Scalars['JSON']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFooter_Content = {
-  __typename?: "Footer_content";
+  __typename?: 'Footer_content';
   connections?: Maybe<Array<Maybe<IGenFooter_Content_Connections>>>;
-  json?: Maybe<Scalars["JSON"]>;
+  json?: Maybe<Scalars['JSON']>;
+};
+
+
+export type IGenFooter_ContentConnectionsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFooter_Content_Connections = IGenCaisy_Field_Document_NotFound;
 
 export type IGenFulltext = {
-  __typename?: "Fulltext";
+  __typename?: 'Fulltext';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  id?: Maybe<Scalars["ID"]>;
+  id?: Maybe<Scalars['ID']>;
   text?: Maybe<IGenFulltext_Text>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenFulltextTextArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFulltext_Connection = {
-  __typename?: "Fulltext_Connection";
+  __typename?: 'Fulltext_Connection';
   edges?: Maybe<Array<Maybe<IGenFulltext_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenFulltext_ConnectionEdge = {
-  __typename?: "Fulltext_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Fulltext_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenFulltext>;
 };
 
 export type IGenFulltext_CreateInput = {
-  text?: InputMaybe<Scalars["JSON"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  text?: InputMaybe<Scalars['JSON']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFulltext_Sort = {
@@ -483,8 +512,8 @@ export type IGenFulltext_Sort = {
 };
 
 export type IGenFulltext_UpdateInput = {
-  text?: InputMaybe<Scalars["JSON"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  text?: InputMaybe<Scalars['JSON']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFulltext_Where = {
@@ -495,41 +524,51 @@ export type IGenFulltext_Where = {
 };
 
 export type IGenFulltext_Text = {
-  __typename?: "Fulltext_text";
+  __typename?: 'Fulltext_text';
   connections?: Maybe<Array<Maybe<IGenFulltext_Text_Connections>>>;
-  json?: Maybe<Scalars["JSON"]>;
+  json?: Maybe<Scalars['JSON']>;
+};
+
+
+export type IGenFulltext_TextConnectionsArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFulltext_Text_Connections = IGenAsset;
 
 export type IGenFullwidthBlogTeaser = {
-  __typename?: "FullwidthBlogTeaser";
+  __typename?: 'FullwidthBlogTeaser';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   featuredArticle?: Maybe<IGenBlogArticle>;
-  id?: Maybe<Scalars["ID"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars['ID']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenFullwidthBlogTeaserFeaturedArticleArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFullwidthBlogTeaser_Connection = {
-  __typename?: "FullwidthBlogTeaser_Connection";
+  __typename?: 'FullwidthBlogTeaser_Connection';
   edges?: Maybe<Array<Maybe<IGenFullwidthBlogTeaser_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenFullwidthBlogTeaser_ConnectionEdge = {
-  __typename?: "FullwidthBlogTeaser_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'FullwidthBlogTeaser_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenFullwidthBlogTeaser>;
 };
 
 export type IGenFullwidthBlogTeaser_CreateInput = {
-  featuredArticle?: InputMaybe<Scalars["ID"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  featuredArticle?: InputMaybe<Scalars['ID']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFullwidthBlogTeaser_Sort = {
@@ -538,8 +577,8 @@ export type IGenFullwidthBlogTeaser_Sort = {
 };
 
 export type IGenFullwidthBlogTeaser_UpdateInput = {
-  featuredArticle?: InputMaybe<Scalars["ID"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  featuredArticle?: InputMaybe<Scalars['ID']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenFullwidthBlogTeaser_Where = {
@@ -549,31 +588,31 @@ export type IGenFullwidthBlogTeaser_Where = {
 };
 
 export type IGenHeadline = {
-  __typename?: "Headline";
+  __typename?: 'Headline';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  headline?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  subheadline?: Maybe<Scalars["String"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  headline?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  subheadline?: Maybe<Scalars['String']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
 export type IGenHeadline_Connection = {
-  __typename?: "Headline_Connection";
+  __typename?: 'Headline_Connection';
   edges?: Maybe<Array<Maybe<IGenHeadline_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenHeadline_ConnectionEdge = {
-  __typename?: "Headline_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Headline_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenHeadline>;
 };
 
 export type IGenHeadline_CreateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenHeadline_Sort = {
@@ -583,9 +622,9 @@ export type IGenHeadline_Sort = {
 };
 
 export type IGenHeadline_UpdateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenHeadline_Where = {
@@ -597,7 +636,7 @@ export type IGenHeadline_Where = {
 };
 
 export type IGenMutation = {
-  __typename?: "Mutation";
+  __typename?: 'Mutation';
   createAsset?: Maybe<IGenAsset>;
   createAuthor?: Maybe<IGenAuthor>;
   createBlogArticle?: Maybe<IGenBlogArticle>;
@@ -613,21 +652,21 @@ export type IGenMutation = {
   createNewsletterSignup?: Maybe<IGenNewsletterSignup>;
   createPage?: Maybe<IGenPage>;
   createSeoInformation?: Maybe<IGenSeoInformation>;
-  deleteAsset?: Maybe<Scalars["Boolean"]>;
-  deleteAuthor?: Maybe<Scalars["Boolean"]>;
-  deleteBlogArticle?: Maybe<Scalars["Boolean"]>;
-  deleteBlogArticleGrid?: Maybe<Scalars["Boolean"]>;
-  deleteCategory?: Maybe<Scalars["Boolean"]>;
-  deleteContactForm?: Maybe<Scalars["Boolean"]>;
-  deleteFooter?: Maybe<Scalars["Boolean"]>;
-  deleteFulltext?: Maybe<Scalars["Boolean"]>;
-  deleteFullwidthBlogTeaser?: Maybe<Scalars["Boolean"]>;
-  deleteHeadline?: Maybe<Scalars["Boolean"]>;
-  deleteNavigation?: Maybe<Scalars["Boolean"]>;
-  deleteNavigationEntry?: Maybe<Scalars["Boolean"]>;
-  deleteNewsletterSignup?: Maybe<Scalars["Boolean"]>;
-  deletePage?: Maybe<Scalars["Boolean"]>;
-  deleteSeoInformation?: Maybe<Scalars["Boolean"]>;
+  deleteAsset?: Maybe<Scalars['Boolean']>;
+  deleteAuthor?: Maybe<Scalars['Boolean']>;
+  deleteBlogArticle?: Maybe<Scalars['Boolean']>;
+  deleteBlogArticleGrid?: Maybe<Scalars['Boolean']>;
+  deleteCategory?: Maybe<Scalars['Boolean']>;
+  deleteContactForm?: Maybe<Scalars['Boolean']>;
+  deleteFooter?: Maybe<Scalars['Boolean']>;
+  deleteFulltext?: Maybe<Scalars['Boolean']>;
+  deleteFullwidthBlogTeaser?: Maybe<Scalars['Boolean']>;
+  deleteHeadline?: Maybe<Scalars['Boolean']>;
+  deleteNavigation?: Maybe<Scalars['Boolean']>;
+  deleteNavigationEntry?: Maybe<Scalars['Boolean']>;
+  deleteNewsletterSignup?: Maybe<Scalars['Boolean']>;
+  deletePage?: Maybe<Scalars['Boolean']>;
+  deleteSeoInformation?: Maybe<Scalars['Boolean']>;
   updateAsset?: Maybe<IGenAsset>;
   updateAuthor?: Maybe<IGenAuthor>;
   updateBlogArticle?: Maybe<IGenBlogArticle>;
@@ -645,296 +684,353 @@ export type IGenMutation = {
   updateSeoInformation?: Maybe<IGenSeoInformation>;
 };
 
+
 export type IGenMutationCreateAssetArgs = {
   input: IGenAsset_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateAuthorArgs = {
   input: IGenAuthor_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateBlogArticleArgs = {
   input: IGenBlogArticle_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateBlogArticleGridArgs = {
   input: IGenBlogArticleGrid_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateCategoryArgs = {
   input: IGenCategory_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateContactFormArgs = {
   input: IGenContactForm_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateFooterArgs = {
   input: IGenFooter_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateFulltextArgs = {
   input: IGenFulltext_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateFullwidthBlogTeaserArgs = {
   input: IGenFullwidthBlogTeaser_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateHeadlineArgs = {
   input: IGenHeadline_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateNavigationArgs = {
   input: IGenNavigation_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateNavigationEntryArgs = {
   input: IGenNavigationEntry_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateNewsletterSignupArgs = {
   input: IGenNewsletterSignup_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreatePageArgs = {
   input: IGenPage_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationCreateSeoInformationArgs = {
   input: IGenSeoInformation_CreateInput;
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenMutationDeleteAssetArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteAuthorArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteBlogArticleArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteBlogArticleGridArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteCategoryArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteContactFormArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteFooterArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteFulltextArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteFullwidthBlogTeaserArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteHeadlineArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteNavigationArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteNavigationEntryArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteNewsletterSignupArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeletePageArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationDeleteSeoInformationArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
 };
+
 
 export type IGenMutationUpdateAssetArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenAsset_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateAuthorArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenAuthor_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateBlogArticleArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenBlogArticle_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateBlogArticleGridArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenBlogArticleGrid_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateCategoryArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenCategory_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateContactFormArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenContactForm_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateFooterArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenFooter_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateFulltextArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenFulltext_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateFullwidthBlogTeaserArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenFullwidthBlogTeaser_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateHeadlineArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenHeadline_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateNavigationArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenNavigation_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateNavigationEntryArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenNavigationEntry_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdateNewsletterSignupArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenNewsletterSignup_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
+
 
 export type IGenMutationUpdatePageArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenPage_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type IGenMutationUpdateSeoInformationArgs = {
-  id: Scalars["ID"];
+  id: Scalars['ID'];
   input: IGenSeoInformation_UpdateInput;
-  locale?: InputMaybe<Scalars["String"]>;
-  merge?: InputMaybe<Scalars["Boolean"]>;
+  locale?: InputMaybe<Scalars['String']>;
+  merge?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type IGenNavigation = {
-  __typename?: "Navigation";
+  __typename?: 'Navigation';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   entries?: Maybe<Array<Maybe<IGenNavigation_Entries>>>;
   homePage?: Maybe<IGenPage>;
-  id?: Maybe<Scalars["ID"]>;
+  id?: Maybe<Scalars['ID']>;
   notFoundPage?: Maybe<IGenPage>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
+
 
 export type IGenNavigationEntriesArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenNavigationHomePageArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type IGenNavigationNotFoundPageArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigationEntry = {
-  __typename?: "NavigationEntry";
+  __typename?: 'NavigationEntry';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   connection?: Maybe<IGenPage>;
-  id?: Maybe<Scalars["ID"]>;
-  title?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenNavigationEntryConnectionArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigationEntry_Connection = {
-  __typename?: "NavigationEntry_Connection";
+  __typename?: 'NavigationEntry_Connection';
   edges?: Maybe<Array<Maybe<IGenNavigationEntry_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenNavigationEntry_ConnectionEdge = {
-  __typename?: "NavigationEntry_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'NavigationEntry_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenNavigationEntry>;
 };
 
 export type IGenNavigationEntry_CreateInput = {
-  connection?: InputMaybe<Scalars["ID"]>;
-  title?: InputMaybe<Scalars["String"]>;
+  connection?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigationEntry_Sort = {
@@ -943,8 +1039,8 @@ export type IGenNavigationEntry_Sort = {
 };
 
 export type IGenNavigationEntry_UpdateInput = {
-  connection?: InputMaybe<Scalars["ID"]>;
-  title?: InputMaybe<Scalars["String"]>;
+  connection?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigationEntry_Where = {
@@ -954,47 +1050,47 @@ export type IGenNavigationEntry_Where = {
 };
 
 export type IGenNavigation_CreateInput = {
-  entries?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  homePage?: InputMaybe<Scalars["ID"]>;
-  notFoundPage?: InputMaybe<Scalars["ID"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  entries?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  homePage?: InputMaybe<Scalars['ID']>;
+  notFoundPage?: InputMaybe<Scalars['ID']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigation_UpdateInput = {
-  entries?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  homePage?: InputMaybe<Scalars["ID"]>;
-  notFoundPage?: InputMaybe<Scalars["ID"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  entries?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  homePage?: InputMaybe<Scalars['ID']>;
+  notFoundPage?: InputMaybe<Scalars['ID']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNavigation_Entries = IGenNavigationEntry;
 
 export type IGenNewsletterSignup = {
-  __typename?: "NewsletterSignup";
+  __typename?: 'NewsletterSignup';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  headline?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  subheadline?: Maybe<Scalars["String"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  headline?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  subheadline?: Maybe<Scalars['String']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
 export type IGenNewsletterSignup_Connection = {
-  __typename?: "NewsletterSignup_Connection";
+  __typename?: 'NewsletterSignup_Connection';
   edges?: Maybe<Array<Maybe<IGenNewsletterSignup_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenNewsletterSignup_ConnectionEdge = {
-  __typename?: "NewsletterSignup_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'NewsletterSignup_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenNewsletterSignup>;
 };
 
 export type IGenNewsletterSignup_CreateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNewsletterSignup_Sort = {
@@ -1004,9 +1100,9 @@ export type IGenNewsletterSignup_Sort = {
 };
 
 export type IGenNewsletterSignup_UpdateInput = {
-  headline?: InputMaybe<Scalars["String"]>;
-  subheadline?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  headline?: InputMaybe<Scalars['String']>;
+  subheadline?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenNewsletterSignup_Where = {
@@ -1018,54 +1114,60 @@ export type IGenNewsletterSignup_Where = {
 };
 
 export enum IGenOrder {
-  Asc = "ASC",
-  Desc = "DESC",
+  Asc = 'ASC',
+  Desc = 'DESC'
 }
 
 export type IGenPage = {
-  __typename?: "Page";
+  __typename?: 'Page';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
   components?: Maybe<Array<Maybe<IGenPage_Components>>>;
-  id?: Maybe<Scalars["ID"]>;
+  id?: Maybe<Scalars['ID']>;
   seo?: Maybe<IGenSeoInformation>;
-  slug?: Maybe<Scalars["String"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  slug?: Maybe<Scalars['String']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
+
 
 export type IGenPageComponentsArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type IGenPageSeoArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenPageInfo = {
-  __typename?: "PageInfo";
-  endCursor?: Maybe<Scalars["String"]>;
-  hasNextPage?: Maybe<Scalars["Boolean"]>;
-  hasPreviousPage?: Maybe<Scalars["Boolean"]>;
-  startCursor?: Maybe<Scalars["String"]>;
+  __typename?: 'PageInfo';
+  endCursor?: Maybe<Scalars['String']>;
+  hasNextPage?: Maybe<Scalars['Boolean']>;
+  hasPreviousPage?: Maybe<Scalars['Boolean']>;
+  startCursor?: Maybe<Scalars['String']>;
 };
 
 export type IGenPage_Connection = {
-  __typename?: "Page_Connection";
+  __typename?: 'Page_Connection';
   edges?: Maybe<Array<Maybe<IGenPage_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenPage_ConnectionEdge = {
-  __typename?: "Page_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'Page_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenPage>;
 };
 
 export type IGenPage_CreateInput = {
-  components?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  seo?: InputMaybe<Scalars["ID"]>;
-  slug?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  components?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  seo?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenPage_Sort = {
@@ -1076,10 +1178,10 @@ export type IGenPage_Sort = {
 };
 
 export type IGenPage_UpdateInput = {
-  components?: InputMaybe<Array<InputMaybe<Scalars["ID"]>>>;
-  seo?: InputMaybe<Scalars["ID"]>;
-  slug?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  components?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  seo?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenPage_Where = {
@@ -1089,16 +1191,10 @@ export type IGenPage_Where = {
   titleInternal?: InputMaybe<IGenCaisyField_String_Where>;
 };
 
-export type IGenPage_Components =
-  | IGenBlogArticleGrid
-  | IGenContactForm
-  | IGenFulltext
-  | IGenFullwidthBlogTeaser
-  | IGenHeadline
-  | IGenNewsletterSignup;
+export type IGenPage_Components = IGenBlogArticleGrid | IGenContactForm | IGenFulltext | IGenFullwidthBlogTeaser | IGenHeadline | IGenNewsletterSignup;
 
 export type IGenQuery = {
-  __typename?: "Query";
+  __typename?: 'Query';
   Asset?: Maybe<IGenAsset>;
   Author?: Maybe<IGenAuthor>;
   BlogArticle?: Maybe<IGenBlogArticle>;
@@ -1129,243 +1225,274 @@ export type IGenQuery = {
   allSeoInformation?: Maybe<IGenSeoInformation_Connection>;
 };
 
+
 export type IGenQueryAssetArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryAuthorArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryBlogArticleArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryBlogArticleGridArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryCategoryArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryContactFormArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryFooterArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryFulltextArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryFullwidthBlogTeaserArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryHeadlineArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryNavigationArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryNavigationEntryArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryNewsletterSignupArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQueryPageArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type IGenQuerySeoInformationArgs = {
-  id: Scalars["ID"];
-  locale?: InputMaybe<Scalars["String"]>;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type IGenQueryAllAssetArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenAsset_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenAsset_Where>>>;
 };
 
+
 export type IGenQueryAllAuthorArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenAuthor_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenAuthor_Where>>>;
 };
 
+
 export type IGenQueryAllBlogArticleArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenBlogArticle_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenBlogArticle_Where>>>;
 };
 
+
 export type IGenQueryAllBlogArticleGridArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenBlogArticleGrid_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenBlogArticleGrid_Where>>>;
 };
 
+
 export type IGenQueryAllCategoryArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenCategory_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenCategory_Where>>>;
 };
 
+
 export type IGenQueryAllContactFormArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenContactForm_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenContactForm_Where>>>;
 };
 
+
 export type IGenQueryAllFulltextArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenFulltext_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenFulltext_Where>>>;
 };
 
+
 export type IGenQueryAllFullwidthBlogTeaserArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenFullwidthBlogTeaser_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenFullwidthBlogTeaser_Where>>>;
 };
 
+
 export type IGenQueryAllHeadlineArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenHeadline_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenHeadline_Where>>>;
 };
 
+
 export type IGenQueryAllNavigationEntryArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenNavigationEntry_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenNavigationEntry_Where>>>;
 };
 
+
 export type IGenQueryAllNewsletterSignupArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenNewsletterSignup_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenNewsletterSignup_Where>>>;
 };
 
+
 export type IGenQueryAllPageArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenPage_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenPage_Where>>>;
 };
 
+
 export type IGenQueryAllSeoInformationArgs = {
-  after?: InputMaybe<Scalars["String"]>;
-  before?: InputMaybe<Scalars["String"]>;
-  first?: InputMaybe<Scalars["Int"]>;
-  last?: InputMaybe<Scalars["Int"]>;
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Array<InputMaybe<IGenSeoInformation_Sort>>>;
   where?: InputMaybe<Array<InputMaybe<IGenSeoInformation_Where>>>;
 };
 
 export type IGenSeoInformation = {
-  __typename?: "SeoInformation";
+  __typename?: 'SeoInformation';
   _meta?: Maybe<IGenCaisyDocument_Meta>;
-  description?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  keywords?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  keywords?: Maybe<Scalars['String']>;
   ogImage?: Maybe<IGenAsset>;
-  title?: Maybe<Scalars["String"]>;
-  titleInternal?: Maybe<Scalars["String"]>;
+  title?: Maybe<Scalars['String']>;
+  titleInternal?: Maybe<Scalars['String']>;
 };
 
+
 export type IGenSeoInformationOgImageArgs = {
-  locale?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenSeoInformation_Connection = {
-  __typename?: "SeoInformation_Connection";
+  __typename?: 'SeoInformation_Connection';
   edges?: Maybe<Array<Maybe<IGenSeoInformation_ConnectionEdge>>>;
   pageInfo?: Maybe<IGenPageInfo>;
-  totalCount?: Maybe<Scalars["Int"]>;
+  totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type IGenSeoInformation_ConnectionEdge = {
-  __typename?: "SeoInformation_ConnectionEdge";
-  cursor?: Maybe<Scalars["String"]>;
+  __typename?: 'SeoInformation_ConnectionEdge';
+  cursor?: Maybe<Scalars['String']>;
   node?: Maybe<IGenSeoInformation>;
 };
 
 export type IGenSeoInformation_CreateInput = {
-  description?: InputMaybe<Scalars["String"]>;
-  keywords?: InputMaybe<Scalars["String"]>;
-  ogImage?: InputMaybe<Scalars["ID"]>;
-  title?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
+  keywords?: InputMaybe<Scalars['String']>;
+  ogImage?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenSeoInformation_Sort = {
@@ -1377,11 +1504,11 @@ export type IGenSeoInformation_Sort = {
 };
 
 export type IGenSeoInformation_UpdateInput = {
-  description?: InputMaybe<Scalars["String"]>;
-  keywords?: InputMaybe<Scalars["String"]>;
-  ogImage?: InputMaybe<Scalars["ID"]>;
-  title?: InputMaybe<Scalars["String"]>;
-  titleInternal?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars['String']>;
+  keywords?: InputMaybe<Scalars['String']>;
+  ogImage?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+  titleInternal?: InputMaybe<Scalars['String']>;
 };
 
 export type IGenSeoInformation_Where = {
@@ -1393,643 +1520,426 @@ export type IGenSeoInformation_Where = {
   titleInternal?: InputMaybe<IGenCaisyField_String_Where>;
 };
 
-export type IGenAssetFragment = {
-  __typename?: "Asset";
-  title?: string | null;
-  src?: string | null;
-  originType?: string | null;
-  keywords?: string | null;
-  id?: string | null;
-  dominantColor?: string | null;
-  description?: string | null;
-  copyright?: string | null;
-  author?: string | null;
-};
+export type IGenAssetFragment = { __typename?: 'Asset', title?: string | null, src?: string | null, originType?: string | null, keywords?: string | null, id?: string | null, dominantColor?: string | null, description?: string | null, copyright?: string | null, author?: string | null };
 
-export type IGenAuthorFragment = {
-  __typename?: "Author";
-  name?: string | null;
-  role?: string | null;
-  id?: string | null;
-  avatar?: ({ __typename?: "Asset" } & IGenAssetFragment) | null;
-};
+export type IGenAuthorFragment = { __typename?: 'Author', name?: string | null, role?: string | null, id?: string | null, avatar?: (
+    { __typename?: 'Asset' }
+    & IGenAssetFragment
+  ) | null };
 
-export type IGenBlogArticleFragment = {
-  __typename?: "BlogArticle";
-  teaserHeadline?: string | null;
-  teaserDesciption?: string | null;
-  slug?: string | null;
-  id?: string | null;
-  text?: {
-    __typename?: "BlogArticle_text";
-    json?: any | null;
-    connections?: Array<
-      ({ __typename: "Asset" } & IGenAssetFragment) | null
-    > | null;
-  } | null;
-  teaserImage?: ({ __typename?: "Asset" } & IGenAssetFragment) | null;
-  seo?: {
-    __typename?: "SeoInformation";
-    id?: string | null;
-    description?: string | null;
-    keywords?: string | null;
-    title?: string | null;
-    ogImage?: ({ __typename?: "Asset" } & IGenAssetFragment) | null;
-  } | null;
-};
+export type IGenBlogArticleFragment = { __typename?: 'BlogArticle', teaserHeadline?: string | null, teaserDesciption?: string | null, slug?: string | null, id?: string | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+      { __typename: 'Asset' }
+      & IGenAssetFragment
+    ) | null> | null } | null, teaserImage?: (
+    { __typename?: 'Asset' }
+    & IGenAssetFragment
+  ) | null, seo?: { __typename?: 'SeoInformation', id?: string | null, description?: string | null, keywords?: string | null, title?: string | null, ogImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null } | null };
 
-export type IGenBlogArticleGridFragment = {
-  __typename?: "BlogArticleGrid";
-  id?: string | null;
-  headline?: string | null;
-  subheadline?: string | null;
-  articles?: Array<{
-    __typename?: "BlogArticle";
-    id?: string | null;
-    slug?: string | null;
-    teaserDesciption?: string | null;
-    teaserHeadline?: string | null;
-    teaserImage?: ({ __typename?: "Asset" } & IGenAssetFragment) | null;
-    text?: {
-      __typename?: "BlogArticle_text";
-      json?: any | null;
-      connections?: Array<
-        ({ __typename: "Asset" } & IGenAssetFragment) | null
-      > | null;
-    } | null;
-  } | null> | null;
-};
+export type IGenBlogArticleGridFragment = { __typename?: 'BlogArticleGrid', id?: string | null, headline?: string | null, subheadline?: string | null, articles?: Array<{ __typename?: 'BlogArticle', id?: string | null, slug?: string | null, teaserDesciption?: string | null, teaserHeadline?: string | null, teaserImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+        { __typename: 'Asset' }
+        & IGenAssetFragment
+      ) | null> | null } | null } | null> | null };
 
-export type IGenCategoryFragment = {
-  __typename?: "Category";
-  name?: string | null;
-  id?: string | null;
-};
+export type IGenCategoryFragment = { __typename?: 'Category', name?: string | null, id?: string | null };
 
-export type IGenContactFormFragment = {
-  __typename?: "ContactForm";
-  id?: string | null;
-  headline?: string | null;
-};
+export type IGenContactFormFragment = { __typename?: 'ContactForm', id?: string | null, headline?: string | null };
 
-export type IGenFulltextFragment = {
-  __typename?: "Fulltext";
-  id?: string | null;
-  text?: {
-    __typename?: "Fulltext_text";
-    json?: any | null;
-    connections?: Array<
-      ({ __typename: "Asset" } & IGenAssetFragment) | null
-    > | null;
-  } | null;
-};
+export type IGenFulltextFragment = { __typename?: 'Fulltext', id?: string | null, text?: { __typename?: 'Fulltext_text', json?: any | null, connections?: Array<(
+      { __typename: 'Asset' }
+      & IGenAssetFragment
+    ) | null> | null } | null };
 
-export type IGenFullwidthBlogTeaserFragment = {
-  __typename?: "FullwidthBlogTeaser";
-  id?: string | null;
-  featuredArticle?: {
-    __typename?: "BlogArticle";
-    id?: string | null;
-    slug?: string | null;
-    teaserHeadline?: string | null;
-    teaserDesciption?: string | null;
-    teaserImage?: ({ __typename?: "Asset" } & IGenAssetFragment) | null;
-    text?: {
-      __typename?: "BlogArticle_text";
-      json?: any | null;
-      connections?: Array<
-        ({ __typename: "Asset" } & IGenAssetFragment) | null
-      > | null;
-    } | null;
-    author?: ({ __typename?: "Author" } & IGenAuthorFragment) | null;
-    category?: ({ __typename?: "Category" } & IGenCategoryFragment) | null;
-  } | null;
-};
+export type IGenFullwidthBlogTeaserFragment = { __typename?: 'FullwidthBlogTeaser', id?: string | null, featuredArticle?: { __typename?: 'BlogArticle', id?: string | null, slug?: string | null, teaserHeadline?: string | null, teaserDesciption?: string | null, teaserImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+        { __typename: 'Asset' }
+        & IGenAssetFragment
+      ) | null> | null } | null, author?: (
+      { __typename?: 'Author' }
+      & IGenAuthorFragment
+    ) | null, category?: (
+      { __typename?: 'Category' }
+      & IGenCategoryFragment
+    ) | null } | null };
 
-export type IGenHeadlineFragment = {
-  __typename?: "Headline";
-  subheadline?: string | null;
-  id?: string | null;
-  headline?: string | null;
-};
+export type IGenHeadlineFragment = { __typename?: 'Headline', subheadline?: string | null, id?: string | null, headline?: string | null };
 
-export type IGenNavigationEntryFragment = {
-  __typename?: "NavigationEntry";
-  id?: string | null;
-  title?: string | null;
-  connection?: {
-    __typename?: "Page";
-    id?: string | null;
-    slug?: string | null;
-  } | null;
-};
+export type IGenNavigationEntryFragment = { __typename?: 'NavigationEntry', id?: string | null, title?: string | null, connection?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null };
 
-export type IGenNewsletterSignupFragment = {
-  __typename?: "NewsletterSignup";
-  headline?: string | null;
-  subheadline?: string | null;
-  id?: string | null;
-};
+export type IGenNewsletterSignupFragment = { __typename?: 'NewsletterSignup', headline?: string | null, subheadline?: string | null, id?: string | null };
 
-export type IGenPageFragment = {
-  __typename?: "Page";
-  id?: string | null;
-  slug?: string | null;
-  components?: Array<
-    | ({ __typename: "BlogArticleGrid" } & IGenBlogArticleGridFragment)
-    | ({ __typename: "ContactForm" } & IGenContactFormFragment)
-    | ({ __typename: "Fulltext" } & IGenFulltextFragment)
-    | ({ __typename: "FullwidthBlogTeaser" } & IGenFullwidthBlogTeaserFragment)
-    | ({ __typename: "Headline" } & IGenHeadlineFragment)
-    | ({ __typename: "NewsletterSignup" } & IGenNewsletterSignupFragment)
-    | null
-  > | null;
-  seo?: {
-    __typename?: "SeoInformation";
-    title?: string | null;
-    keywords?: string | null;
-    id?: string | null;
-    description?: string | null;
-    ogImage?: { __typename?: "Asset"; id?: string | null } | null;
-  } | null;
-};
+export type IGenPageFragment = { __typename?: 'Page', id?: string | null, slug?: string | null, components?: Array<(
+    { __typename: 'BlogArticleGrid' }
+    & IGenBlogArticleGridFragment
+  ) | (
+    { __typename: 'ContactForm' }
+    & IGenContactFormFragment
+  ) | (
+    { __typename: 'Fulltext' }
+    & IGenFulltextFragment
+  ) | (
+    { __typename: 'FullwidthBlogTeaser' }
+    & IGenFullwidthBlogTeaserFragment
+  ) | (
+    { __typename: 'Headline' }
+    & IGenHeadlineFragment
+  ) | (
+    { __typename: 'NewsletterSignup' }
+    & IGenNewsletterSignupFragment
+  ) | null> | null, seo?: { __typename?: 'SeoInformation', title?: string | null, keywords?: string | null, id?: string | null, description?: string | null, ogImage?: { __typename?: 'Asset', id?: string | null } | null } | null };
 
-export type IGenFooterQueryVariables = Exact<{ [key: string]: never }>;
+export type IGenFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type IGenFooterQuery = {
-  __typename?: "Query";
-  Footer?: {
-    __typename?: "Footer";
-    id?: string | null;
-    content?: { __typename?: "Footer_content"; json?: any | null } | null;
-  } | null;
-};
 
-export type IGenNavigationQueryVariables = Exact<{ [key: string]: never }>;
+export type IGenFooterQuery = { __typename?: 'Query', Footer?: { __typename?: 'Footer', id?: string | null, content?: { __typename?: 'Footer_content', json?: any | null } | null } | null };
 
-export type IGenNavigationQuery = {
-  __typename?: "Query";
-  Navigation?: {
-    __typename?: "Navigation";
-    id?: string | null;
-    homePage?: {
-      __typename?: "Page";
-      id?: string | null;
-      slug?: string | null;
-    } | null;
-    notFoundPage?: {
-      __typename?: "Page";
-      id?: string | null;
-      slug?: string | null;
-    } | null;
-    entries?: Array<
-      ({ __typename?: "NavigationEntry" } & IGenNavigationEntryFragment) | null
-    > | null;
-  } | null;
-};
+export type IGenNavigationQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IGenNavigationQuery = { __typename?: 'Query', Navigation?: { __typename?: 'Navigation', id?: string | null, homePage?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null, notFoundPage?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null, entries?: Array<(
+      { __typename?: 'NavigationEntry' }
+      & IGenNavigationEntryFragment
+    ) | null> | null } | null };
 
 export type IGenAllBlogArticleBySlugQueryVariables = Exact<{
-  slug: Scalars["String"];
+  slug: Scalars['String'];
 }>;
 
-export type IGenAllBlogArticleBySlugQuery = {
-  __typename?: "Query";
-  allBlogArticle?: {
-    __typename?: "BlogArticle_Connection";
-    edges?: Array<{
-      __typename?: "BlogArticle_ConnectionEdge";
-      node?: ({ __typename?: "BlogArticle" } & IGenBlogArticleFragment) | null;
-    } | null> | null;
-  } | null;
-};
+
+export type IGenAllBlogArticleBySlugQuery = { __typename?: 'Query', allBlogArticle?: { __typename?: 'BlogArticle_Connection', edges?: Array<{ __typename?: 'BlogArticle_ConnectionEdge', node?: (
+        { __typename?: 'BlogArticle' }
+        & IGenBlogArticleFragment
+      ) | null } | null> | null } | null };
 
 export type IGenAllBlogArticleMetaQueryVariables = Exact<{
-  after?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
 }>;
 
-export type IGenAllBlogArticleMetaQuery = {
-  __typename?: "Query";
-  allBlogArticle?: {
-    __typename?: "BlogArticle_Connection";
-    totalCount?: number | null;
-    pageInfo?: {
-      __typename?: "PageInfo";
-      hasNextPage?: boolean | null;
-      endCursor?: string | null;
-    } | null;
-    edges?: Array<{
-      __typename?: "BlogArticle_ConnectionEdge";
-      node?: {
-        __typename?: "BlogArticle";
-        id?: string | null;
-        slug?: string | null;
-        _meta?: {
-          __typename?: "CaisyDocument_Meta";
-          publishedAt?: any | null;
-        } | null;
-      } | null;
-    } | null> | null;
-  } | null;
-};
+
+export type IGenAllBlogArticleMetaQuery = { __typename?: 'Query', allBlogArticle?: { __typename?: 'BlogArticle_Connection', totalCount?: number | null, pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null, endCursor?: string | null } | null, edges?: Array<{ __typename?: 'BlogArticle_ConnectionEdge', node?: { __typename?: 'BlogArticle', id?: string | null, slug?: string | null, _meta?: { __typename?: 'CaisyDocument_Meta', publishedAt?: any | null } | null } | null } | null> | null } | null };
 
 export type IGenAllPageBySlugQueryVariables = Exact<{
-  slug: Scalars["String"];
+  slug: Scalars['String'];
 }>;
 
-export type IGenAllPageBySlugQuery = {
-  __typename?: "Query";
-  allPage?: {
-    __typename?: "Page_Connection";
-    edges?: Array<{
-      __typename?: "Page_ConnectionEdge";
-      node?: ({ __typename?: "Page" } & IGenPageFragment) | null;
-    } | null> | null;
-  } | null;
-};
+
+export type IGenAllPageBySlugQuery = { __typename?: 'Query', allPage?: { __typename?: 'Page_Connection', edges?: Array<{ __typename?: 'Page_ConnectionEdge', node?: (
+        { __typename?: 'Page' }
+        & IGenPageFragment
+      ) | null } | null> | null } | null };
 
 export type IGenAllPageMetaQueryVariables = Exact<{
-  after?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars['String']>;
 }>;
 
-export type IGenAllPageMetaQuery = {
-  __typename?: "Query";
-  allPage?: {
-    __typename?: "Page_Connection";
-    totalCount?: number | null;
-    pageInfo?: {
-      __typename?: "PageInfo";
-      hasNextPage?: boolean | null;
-      endCursor?: string | null;
-    } | null;
-    edges?: Array<{
-      __typename?: "Page_ConnectionEdge";
-      node?: {
-        __typename?: "Page";
-        id?: string | null;
-        slug?: string | null;
-        _meta?: {
-          __typename?: "CaisyDocument_Meta";
-          publishedAt?: any | null;
-        } | null;
-      } | null;
-    } | null> | null;
-  } | null;
-};
+
+export type IGenAllPageMetaQuery = { __typename?: 'Query', allPage?: { __typename?: 'Page_Connection', totalCount?: number | null, pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null, endCursor?: string | null } | null, edges?: Array<{ __typename?: 'Page_ConnectionEdge', node?: { __typename?: 'Page', id?: string | null, slug?: string | null, _meta?: { __typename?: 'CaisyDocument_Meta', publishedAt?: any | null } | null } | null } | null> | null } | null };
 
 export const AssetFragmentDoc = gql`
-  fragment Asset on Asset {
-    title
-    src
-    originType
-    keywords
-    id
-    dominantColor
-    description
-    copyright
-    author
-  }
-`;
+    fragment Asset on Asset {
+  title
+  src
+  originType
+  keywords
+  id
+  dominantColor
+  description
+  copyright
+  author
+}
+    `;
 export const BlogArticleFragmentDoc = gql`
-  fragment BlogArticle on BlogArticle {
-    text {
-      connections {
-        __typename
-        ...Asset
-      }
-      json
-    }
-    teaserImage {
+    fragment BlogArticle on BlogArticle {
+  text {
+    connections {
+      __typename
       ...Asset
     }
-    teaserHeadline
-    teaserDesciption
-    slug
-    seo {
-      id
-      description
-      keywords
-      ogImage {
-        ...Asset
-      }
-      title
-    }
-    id
+    json
   }
-`;
-export const NavigationEntryFragmentDoc = gql`
-  fragment NavigationEntry on NavigationEntry {
+  teaserImage {
+    ...Asset
+  }
+  teaserHeadline
+  teaserDesciption
+  slug
+  seo {
     id
+    description
+    keywords
+    ogImage {
+      ...Asset
+    }
     title
-    connection {
-      id
-      slug
-    }
   }
-`;
+  id
+}
+    `;
+export const NavigationEntryFragmentDoc = gql`
+    fragment NavigationEntry on NavigationEntry {
+  id
+  title
+  connection {
+    id
+    slug
+  }
+}
+    `;
 export const ContactFormFragmentDoc = gql`
-  fragment ContactForm on ContactForm {
-    id
-    headline
-  }
-`;
+    fragment ContactForm on ContactForm {
+  id
+  headline
+}
+    `;
 export const BlogArticleGridFragmentDoc = gql`
-  fragment BlogArticleGrid on BlogArticleGrid {
-    id
-    headline
-    subheadline
-    articles {
-      ... on BlogArticle {
-        id
-        slug
-        teaserDesciption
-        teaserHeadline
-        teaserImage {
-          ...Asset
-        }
-        text {
-          connections {
-            __typename
-            ...Asset
-          }
-          json
-        }
-      }
-    }
-  }
-`;
-export const NewsletterSignupFragmentDoc = gql`
-  fragment NewsletterSignup on NewsletterSignup {
-    headline
-    subheadline
-    id
-  }
-`;
-export const AuthorFragmentDoc = gql`
-  fragment Author on Author {
-    name
-    role
-    avatar {
-      ...Asset
-    }
-    id
-  }
-`;
-export const CategoryFragmentDoc = gql`
-  fragment Category on Category {
-    name
-    id
-  }
-`;
-export const FullwidthBlogTeaserFragmentDoc = gql`
-  fragment FullwidthBlogTeaser on FullwidthBlogTeaser {
-    id
-    featuredArticle {
+    fragment BlogArticleGrid on BlogArticleGrid {
+  id
+  headline
+  subheadline
+  articles {
+    ... on BlogArticle {
       id
       slug
+      teaserDesciption
+      teaserHeadline
       teaserImage {
         ...Asset
       }
       text {
         connections {
           __typename
-          ... on Asset {
-            ...Asset
-          }
+          ...Asset
         }
         json
       }
-      author {
-        ...Author
-      }
-      category {
-        ...Category
-      }
-      teaserHeadline
-      teaserDesciption
     }
-    id
   }
-`;
-export const HeadlineFragmentDoc = gql`
-  fragment Headline on Headline {
-    subheadline
-    id
-    headline
+}
+    `;
+export const NewsletterSignupFragmentDoc = gql`
+    fragment NewsletterSignup on NewsletterSignup {
+  headline
+  subheadline
+  id
+}
+    `;
+export const AuthorFragmentDoc = gql`
+    fragment Author on Author {
+  name
+  role
+  avatar {
+    ...Asset
   }
-`;
-export const FulltextFragmentDoc = gql`
-  fragment Fulltext on Fulltext {
+  id
+}
+    `;
+export const CategoryFragmentDoc = gql`
+    fragment Category on Category {
+  name
+  id
+}
+    `;
+export const FullwidthBlogTeaserFragmentDoc = gql`
+    fragment FullwidthBlogTeaser on FullwidthBlogTeaser {
+  id
+  featuredArticle {
+    id
+    slug
+    teaserImage {
+      ...Asset
+    }
     text {
-      json
       connections {
         __typename
-        ...Asset
+        ... on Asset {
+          ...Asset
+        }
       }
+      json
     }
-    id
+    author {
+      ...Author
+    }
+    category {
+      ...Category
+    }
+    teaserHeadline
+    teaserDesciption
   }
-`;
-export const PageFragmentDoc = gql`
-  fragment Page on Page {
-    components {
+  id
+}
+    `;
+export const HeadlineFragmentDoc = gql`
+    fragment Headline on Headline {
+  subheadline
+  id
+  headline
+}
+    `;
+export const FulltextFragmentDoc = gql`
+    fragment Fulltext on Fulltext {
+  text {
+    json
+    connections {
       __typename
-      ...ContactForm
-      ...BlogArticleGrid
-      ...NewsletterSignup
-      ...FullwidthBlogTeaser
-      ...Headline
-      ...Fulltext
+      ...Asset
     }
+  }
+  id
+}
+    `;
+export const PageFragmentDoc = gql`
+    fragment Page on Page {
+  components {
+    __typename
+    ...ContactForm
+    ...BlogArticleGrid
+    ...NewsletterSignup
+    ...FullwidthBlogTeaser
+    ...Headline
+    ...Fulltext
+  }
+  id
+  seo {
+    title
+    ogImage {
+      id
+    }
+    keywords
     id
-    seo {
-      title
-      ogImage {
-        id
-      }
-      keywords
-      id
-      description
-    }
-    slug
+    description
   }
-`;
+  slug
+}
+    `;
 export const FooterDocument = gql`
-  query Footer {
-    Footer {
-      id
-      content {
-        json
-      }
+    query Footer {
+  Footer {
+    id
+    content {
+      json
     }
   }
-`;
+}
+    `;
 export const NavigationDocument = gql`
-  query Navigation {
-    Navigation {
+    query Navigation {
+  Navigation {
+    id
+    homePage {
       id
-      homePage {
-        id
-        slug
-      }
-      notFoundPage {
-        id
-        slug
-      }
-      entries {
-        ...NavigationEntry
-      }
+      slug
+    }
+    notFoundPage {
+      id
+      slug
+    }
+    entries {
+      ...NavigationEntry
     }
   }
-  ${NavigationEntryFragmentDoc}
-`;
+}
+    ${NavigationEntryFragmentDoc}`;
 export const AllBlogArticleBySlugDocument = gql`
-  query allBlogArticleBySlug($slug: String!) {
-    allBlogArticle(where: { slug: { eq: $slug } }) {
-      edges {
-        node {
-          ...BlogArticle
-        }
+    query allBlogArticleBySlug($slug: String!) {
+  allBlogArticle(where: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        ...BlogArticle
       }
     }
   }
-  ${BlogArticleFragmentDoc}
-  ${AssetFragmentDoc}
-`;
+}
+    ${BlogArticleFragmentDoc}
+${AssetFragmentDoc}`;
 export const AllBlogArticleMetaDocument = gql`
-  query allBlogArticleMeta($after: String) {
-    allBlogArticle(after: $after) {
-      totalCount
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-      edges {
-        node {
-          _meta {
-            publishedAt
-          }
-          id
-          slug
+    query allBlogArticleMeta($after: String) {
+  allBlogArticle(after: $after) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        _meta {
+          publishedAt
         }
+        id
+        slug
       }
     }
   }
-`;
+}
+    `;
 export const AllPageBySlugDocument = gql`
-  query allPageBySlug($slug: String!) {
-    allPage(where: { slug: { eq: $slug } }) {
-      edges {
-        node {
-          ...Page
-        }
+    query allPageBySlug($slug: String!) {
+  allPage(where: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        ...Page
       }
     }
   }
-  ${PageFragmentDoc}
-  ${ContactFormFragmentDoc}
-  ${BlogArticleGridFragmentDoc}
-  ${AssetFragmentDoc}
-  ${NewsletterSignupFragmentDoc}
-  ${FullwidthBlogTeaserFragmentDoc}
-  ${AuthorFragmentDoc}
-  ${CategoryFragmentDoc}
-  ${HeadlineFragmentDoc}
-  ${FulltextFragmentDoc}
-`;
+}
+    ${PageFragmentDoc}
+${ContactFormFragmentDoc}
+${BlogArticleGridFragmentDoc}
+${AssetFragmentDoc}
+${NewsletterSignupFragmentDoc}
+${FullwidthBlogTeaserFragmentDoc}
+${AuthorFragmentDoc}
+${CategoryFragmentDoc}
+${HeadlineFragmentDoc}
+${FulltextFragmentDoc}`;
 export const AllPageMetaDocument = gql`
-  query allPageMeta($after: String) {
-    allPage(after: $after) {
-      totalCount
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-      edges {
-        node {
-          _meta {
-            publishedAt
-          }
-          id
-          slug
+    query allPageMeta($after: String) {
+  allPage(after: $after) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        _meta {
+          publishedAt
         }
+        id
+        slug
       }
     }
   }
-`;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type Requester<C = {}, E = unknown> = <R, V>(
-  doc: DocumentNode,
-  vars?: V,
-  options?: C
-) => Promise<R> | AsyncIterable<R>;
+}
+    `;
+export type Requester<C = {}, E = unknown> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R> | AsyncIterable<R>
 export function getSdk<C, E>(requester: Requester<C, E>) {
   return {
-    Footer(
-      variables?: IGenFooterQueryVariables,
-      options?: C
-    ): Promise<IGenFooterQuery> {
-      return requester<IGenFooterQuery, IGenFooterQueryVariables>(
-        FooterDocument,
-        variables,
-        options
-      ) as Promise<IGenFooterQuery>;
+    Footer(variables?: IGenFooterQueryVariables, options?: C): Promise<IGenFooterQuery> {
+      return requester<IGenFooterQuery, IGenFooterQueryVariables>(FooterDocument, variables, options) as Promise<IGenFooterQuery>;
     },
-    Navigation(
-      variables?: IGenNavigationQueryVariables,
-      options?: C
-    ): Promise<IGenNavigationQuery> {
-      return requester<IGenNavigationQuery, IGenNavigationQueryVariables>(
-        NavigationDocument,
-        variables,
-        options
-      ) as Promise<IGenNavigationQuery>;
+    Navigation(variables?: IGenNavigationQueryVariables, options?: C): Promise<IGenNavigationQuery> {
+      return requester<IGenNavigationQuery, IGenNavigationQueryVariables>(NavigationDocument, variables, options) as Promise<IGenNavigationQuery>;
     },
-    allBlogArticleBySlug(
-      variables: IGenAllBlogArticleBySlugQueryVariables,
-      options?: C
-    ): Promise<IGenAllBlogArticleBySlugQuery> {
-      return requester<
-        IGenAllBlogArticleBySlugQuery,
-        IGenAllBlogArticleBySlugQueryVariables
-      >(
-        AllBlogArticleBySlugDocument,
-        variables,
-        options
-      ) as Promise<IGenAllBlogArticleBySlugQuery>;
+    allBlogArticleBySlug(variables: IGenAllBlogArticleBySlugQueryVariables, options?: C): Promise<IGenAllBlogArticleBySlugQuery> {
+      return requester<IGenAllBlogArticleBySlugQuery, IGenAllBlogArticleBySlugQueryVariables>(AllBlogArticleBySlugDocument, variables, options) as Promise<IGenAllBlogArticleBySlugQuery>;
     },
-    allBlogArticleMeta(
-      variables?: IGenAllBlogArticleMetaQueryVariables,
-      options?: C
-    ): Promise<IGenAllBlogArticleMetaQuery> {
-      return requester<
-        IGenAllBlogArticleMetaQuery,
-        IGenAllBlogArticleMetaQueryVariables
-      >(
-        AllBlogArticleMetaDocument,
-        variables,
-        options
-      ) as Promise<IGenAllBlogArticleMetaQuery>;
+    allBlogArticleMeta(variables?: IGenAllBlogArticleMetaQueryVariables, options?: C): Promise<IGenAllBlogArticleMetaQuery> {
+      return requester<IGenAllBlogArticleMetaQuery, IGenAllBlogArticleMetaQueryVariables>(AllBlogArticleMetaDocument, variables, options) as Promise<IGenAllBlogArticleMetaQuery>;
     },
-    allPageBySlug(
-      variables: IGenAllPageBySlugQueryVariables,
-      options?: C
-    ): Promise<IGenAllPageBySlugQuery> {
-      return requester<IGenAllPageBySlugQuery, IGenAllPageBySlugQueryVariables>(
-        AllPageBySlugDocument,
-        variables,
-        options
-      ) as Promise<IGenAllPageBySlugQuery>;
+    allPageBySlug(variables: IGenAllPageBySlugQueryVariables, options?: C): Promise<IGenAllPageBySlugQuery> {
+      return requester<IGenAllPageBySlugQuery, IGenAllPageBySlugQueryVariables>(AllPageBySlugDocument, variables, options) as Promise<IGenAllPageBySlugQuery>;
     },
-    allPageMeta(
-      variables?: IGenAllPageMetaQueryVariables,
-      options?: C
-    ): Promise<IGenAllPageMetaQuery> {
-      return requester<IGenAllPageMetaQuery, IGenAllPageMetaQueryVariables>(
-        AllPageMetaDocument,
-        variables,
-        options
-      ) as Promise<IGenAllPageMetaQuery>;
-    },
+    allPageMeta(variables?: IGenAllPageMetaQueryVariables, options?: C): Promise<IGenAllPageMetaQuery> {
+      return requester<IGenAllPageMetaQuery, IGenAllPageMetaQueryVariables>(AllPageMetaDocument, variables, options) as Promise<IGenAllPageMetaQuery>;
+    }
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;
