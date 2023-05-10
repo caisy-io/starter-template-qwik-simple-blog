@@ -1,13 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { IGenFullwidthBlogTeaser } from "../services/graphql/__generated/sdk";
 import { FullContainer } from "./FullContainer";
+import { Asset } from "./Asset";
 
 export const FullwidthBlogTeaser = component$<IGenFullwidthBlogTeaser>(
   ({ featuredArticle }) => {
     const { author, teaserImage } = featuredArticle ?? {};
-    const imageSrc = teaserImage?.src;
-    const imageDominantColor = teaserImage?.dominantColor;
-    const imageDescription = teaserImage?.description;
 
     return (
       <>
@@ -34,10 +32,12 @@ export const FullwidthBlogTeaser = component$<IGenFullwidthBlogTeaser>(
                         <div class="flex justify-start items-start rounded-full">
                           <div class="flex justify-center items-center w-12 h-12 relative rounded-full bg-gray-500">
                             <div class="w-12 h-12 relative overflow-hidden rounded-full">
-                              <img
-                                src={`${author.avatar?.src}?w=46&h=46`}
-                                alt={author.avatar?.description ?? ""}
-                                class="object-cover"
+                              <Asset
+                                blurHash={author.avatar.blurHash}
+                                description={author.avatar.description}
+                                src={author.avatar.src}
+                                width={46}
+                                height={46}
                               />
                             </div>
                           </div>
@@ -80,14 +80,16 @@ export const FullwidthBlogTeaser = component$<IGenFullwidthBlogTeaser>(
                   </a>
                 </div>
                 <div class="flex-grow w-full md:w-1/2 relative overflow-hidden rounded-lg">
-                  <img
-                    style={{ backgroundColor: `${imageDominantColor}` }}
-                    loading="eager"
-                    src={`${imageSrc}?w=960&h=960`}
-                    srcSet={`${imageSrc}?w=1920&h=1920 1920w, ${imageSrc}?w=960&h=960 1280w, ${imageSrc}?w=640&h=640 640w, ${imageSrc}?w=320&h=320 320w`}
-                    alt={imageDescription ?? ""}
-                    class="object-cover"
-                  />
+                  {teaserImage && teaserImage.src && teaserImage.width && teaserImage.height && (
+                    <Asset
+                      loading="eager"
+                      blurHash={teaserImage.blurHash!}
+                      description={teaserImage.description!}
+                      src={teaserImage.src}
+                      height={teaserImage.height}
+                      width={teaserImage.width}
+                    />
+                  )}
                 </div>
               </div>
             </FullContainer>
