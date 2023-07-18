@@ -1,8 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { Image as QwikUnpinkImage } from "@unpic/qwik";
+import { Image as QwikUnpincImage } from "@unpic/qwik";
 import { blurhashToCssGradientString } from "@unpic/placeholder";
 import type { ImageProps } from "@unpic/qwik/lib-types/components/image";
-const Image = QwikUnpinkImage as any;
+const Image = QwikUnpincImage as any;
 
 export const Asset = component$<
   ImageProps & {
