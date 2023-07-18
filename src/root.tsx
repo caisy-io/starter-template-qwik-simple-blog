@@ -6,14 +6,9 @@ import {
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 import { Toast } from "./components/Toast";
-import type { IGenSeoInformation } from "./services/graphql/__generated/sdk";
-
 import "./styles/globals.css";
-export interface IDocument {
-  seo?: IGenSeoInformation | null;
-}
-export default component$<IDocument>(({ seo }) => {
 
+export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
