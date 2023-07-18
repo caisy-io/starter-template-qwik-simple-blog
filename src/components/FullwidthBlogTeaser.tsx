@@ -56,7 +56,7 @@ export const FullwidthBlogTeaser = component$<IGenFullwidthBlogTeaser>(
                   <a href={`/blog/${featuredArticle?.slug}`} class="pointer">
                     <div class="flex justify-start items-start ">
                       <div class="flex justify-center items-center relative overflow-hidden gap-2 rounded-md bg-white">
-                        <p class=" text-[15px] font-semibold text-center text-blue-600">
+                        <p class=" text-[15px] font-semibold text-center text-blue-900">
                           Read more
                         </p>
                         <svg

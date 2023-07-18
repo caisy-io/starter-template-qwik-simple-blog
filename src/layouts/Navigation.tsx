@@ -26,8 +26,8 @@ export const Navigation = component$<IGenNavigation>(
                     class={`font-medium ${
                       entry.connection?.slug === slug ||
                       (slug === "" && entry.connection?.slug === homePage?.slug)
-                        ? "text-blue-500"
-                        : "text-gray-600 hover:text-gray-400"
+                        ? "text-blue-800"
+                        : "text-gray-800 hover:text-gray-500"
                     }`}
                   >
                     {entry?.title}

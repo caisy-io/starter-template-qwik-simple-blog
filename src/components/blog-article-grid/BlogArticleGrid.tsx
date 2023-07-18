@@ -13,7 +13,7 @@ export const BlogArticleGrid = component$<IGenBlogArticleGrid>(
               {headline ?? ""}
             </h1>
             {subheadline && (
-              <h2 class="text-base text-left text-gray-600">{subheadline}</h3>
+              <h2 class="text-base text-left text-gray-600">{subheadline}</h2>
             )}
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
