@@ -9,6 +9,7 @@ import { FullText } from "../../../components/fulltext/FullText";
 import { useResBlog } from "../../layout";
 import { getProps, EPageType } from "@/services/content/getProps";
 import { getAllBlogArticles } from "@/services/content/getAllBlogArticle";
+import { getHeadProps } from "../../../services/content/getHeadProps";
 
 export const onGet: RequestHandler = async ({ params: { slug }, redirect }) => {
   const { is404 } = await getProps({
@@ -44,7 +45,5 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const resBlog = resolveValue(useResBlog);
-  return {
-    title: resBlog?.BlogArticle?.seo?.title ?? "Blog Title NotFound",
-  };
+  return getHeadProps(resBlog.BlogArticle?.seo);
 };

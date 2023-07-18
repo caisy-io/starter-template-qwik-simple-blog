@@ -10,6 +10,7 @@ import type {
 } from "@builder.io/qwik-city";
 import { getProps, EPageType } from "@/services/content/getProps";
 import { getAllPages } from "@/services/content/getAllPages";
+import { getHeadProps } from "../../services/content/getHeadProps";
 
 interface IQwikPage {
   BlogArticle?: IGenBlogArticle | null;
@@ -55,7 +56,5 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
 
 export const head: DocumentHead = ({ resolveValue }) => {
   const resPage = resolveValue(useResPage);
-  return {
-    title: resPage?.Page?.seo?.title ?? "null ResPage",
-  };
+  return getHeadProps(resPage.Page?.seo);
 };
