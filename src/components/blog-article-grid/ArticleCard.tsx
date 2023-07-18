@@ -1,19 +1,20 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import type { IGenBlogArticle } from "../../services/graphql/__generated/sdk";
+import { Asset } from "../Asset";
 
 export const ArticleCard = component$<IGenBlogArticle>(
   ({ teaserImage, teaserHeadline, teaserDesciption, slug }) => {
     return (
       <div class="flex flex-col justify-start items-start flex-grow relative overflow-hidden gap-7">
         {teaserImage?.src && (
-          <div class="self-stretch h-[300px] md:h-[220px] relative overflow-hidden rounded-lg">
-            <img
-              loading="lazy"
-              src={`${teaserImage.src}?w=1024`}
-              srcSet={`${teaserImage.src}?w=1024 1920w, ${teaserImage.src}?w=1024 1280w, ${teaserImage.src}?w=480 640w, ${teaserImage.src}?w=480 320w`}
-              alt={teaserImage.description ?? ""}
-              class="object-cover w-full h-full"
+          <div class="self-stretch minh-[220px] md:h-[220px] relative overflow-hidden rounded-lg">
+            <Asset
+              blurHash={teaserImage.blurHash}
+              description={teaserImage.description}
+              src={teaserImage.src}
+              width={teaserImage.width!}
+              height={teaserImage.height!}
             />
           </div>
         )}

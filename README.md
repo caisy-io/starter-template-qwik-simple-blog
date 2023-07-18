@@ -48,13 +48,13 @@ During development we generate code using
 
 All commands are run from the root of the project, from a terminal:
 
-| Command              | Action                                                   |
-| :------------------- | :------------------------------------------------------- |
-| `yarn install`       | Installs dependencies                                    |
-| `yarn start`         | Starts local dev server at `localhost:5173`              |
-| `yarn gen`           | Regenerates generated types and SDK                      |
-| `yarn run gen:watch` | Wachting changes and regenerates generated types and SDK |
-| `yarn build`         | Build your production site to `./dist/`                  |
+| Command                 | Action                                                   |
+| :---------------------- | :------------------------------------------------------- |
+| `npm install`           | Installs dependencies                                    |
+| `npm run start`         | Starts local dev server at `localhost:5173`              |
+| `npm run gen`           | Regenerates generated types and SDK                      |
+| `npm run gen:watch`     | Wachting changes and regenerates generated types and SDK |
+| `npm run build`         | Build your production site to `./dist/`                  |
 
 ## 👀 Want to learn more?
 
@@ -66,3 +66,47 @@ This command will generate html files for all pages in the dist folder. The down
 ```
 npm run build.server
 ```
+
+## Vercel Edge
+
+This starter site is configured to deploy to [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions), which means it will be rendered at an edge location near to your users.
+
+## Installation
+
+The adaptor will add a new `vite.config.ts` within the `adapters/` directory, and a new entry file will be created, such as:
+
+```
+└── adapters/
+    └── vercel-edge/
+        └── vite.config.ts
+└── src/
+    └── entry.vercel-edge.tsx
+```
+
+Additionally, within the `package.json`, the `build.server` script will be updated with the Vercel Edge build.
+
+## Production build
+
+To build the application for production, use the `build` command, this command will automatically run `npm run build.server` and `npm run build.client`:
+
+```shell
+npm run build
+```
+
+[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adapters/vercel-edge/README.md)
+
+## Dev deploy
+
+To deploy the application for development:
+
+```shell
+npm run deploy
+```
+
+Notice that you might need a [Vercel account](https://docs.Vercel.com/get-started/) in order to complete this step!
+
+## Production deploy
+
+The project is ready to be deployed to Vercel. However, you will need to create a git repository and push the code to it.
+
+You can [deploy your site to Vercel](https://vercel.com/docs/concepts/deployments/overview) either via a Git provider integration or through the Vercel CLI.

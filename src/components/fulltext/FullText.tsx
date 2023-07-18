@@ -15,7 +15,6 @@ export const FullText = component$<IFullText>(({ text }) => {
           <RichTextRenderer
             node={text?.json}
             overwrites={{
-              // @ts-ignore
               documentLink: $((props) =>
                 props?.node && text?.connections ? (
                   <DocumentLink
@@ -31,18 +30,4 @@ export const FullText = component$<IFullText>(({ text }) => {
     </CenterContainer>
   );
 });
-//{text?.json && (
-// <RichTextRenderer
-//   node={text?.json}
-//   overwrites={{
-//     // @ts-ignore
-//     documentLink: (props) =>
-//       props?.node && text?.connections ? (
-//         <DocumentLink
-//           node={props.node}
-//           connections={text.connections}
-//         />
-//       ) : null,
-//   }}
-// />
-// )}
+

@@ -1,6 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { IGenAsset } from "../../../services/graphql/__generated/sdk";
-import { Asset } from "../../Asset";
+import { AssetWithDescription } from "../../AssetWithDescription";
 
 interface IDocumentLink {
   connections: any;
@@ -15,7 +15,7 @@ export const DocumentLink = component$<IDocumentLink>(
           (component: IGenAsset) =>
             component?.__typename == "Asset" &&
             node?.attrs?.documentId == component.id && (
-              <Asset key={component.id} {...component} />
+              <AssetWithDescription key={component.id} {...component} width={800} height={component.height && component.width && ( (component.height / component.width ) * 800)  } />
             )
         )}
         <Slot />

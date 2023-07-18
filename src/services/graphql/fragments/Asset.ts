@@ -4,12 +4,11 @@ export const f_Asset = gql`
   fragment Asset on Asset {
     title
     src
-    originType
-    keywords
     id
-    dominantColor
+    blurHash
     description
-    copyright
-    author
+    width
+    height
+    dominantColor 
   }
 `;
