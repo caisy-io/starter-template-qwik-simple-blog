@@ -13,7 +13,7 @@ export const Headline = component$<IGenHeadline>(
             </h1>
           )}
           {subheadline && (
-            <h4 class="mt-2 text-xl text-center text-gray-400">
+            <h4 class="mt-2 text-xl text-center text-gray-600">
               {subheadline}
             </h4>
           )}

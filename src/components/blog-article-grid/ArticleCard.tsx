@@ -7,23 +7,30 @@ export const ArticleCard = component$<IGenBlogArticle>(
   ({ teaserImage, teaserHeadline, teaserDesciption, slug }) => {
     return (
       <div class="flex flex-col justify-start items-start flex-grow relative overflow-hidden gap-7">
-        {teaserImage?.src && (
-          <div class="self-stretch minh-[220px] md:h-[220px] relative overflow-hidden rounded-lg">
-            <Asset
-              blurHash={teaserImage.blurHash}
-              description={teaserImage.description}
-              src={teaserImage.src}
-              width={teaserImage.width!}
-              height={teaserImage.height!}
-            />
-          </div>
-        )}
-        <div class="flex flex-col justify-start items-start relative gap-3">
-          <h2 class="text-xl font-semibold text-left text-gray-600">
-            {teaserHeadline}
-          </h2>
-          <p class="text-base text-left text-gray-600">{teaserDesciption}</p>
-          <Link href={`/blog/${slug}`} title={teaserHeadline ?? undefined} class="pointer">
+        <Link
+          href={`/blog/${slug}`}
+          title={teaserHeadline ?? undefined}
+          class="pointer"
+        >
+          {teaserImage?.src && (
+            <>
+              <div class="self-stretch minh-[220px] md:h-[220px] relative overflow-hidden rounded-lg">
+                <Asset
+                  blurHash={teaserImage.blurHash}
+                  description={teaserImage.description}
+                  src={teaserImage.src}
+                  width={teaserImage.width!}
+                  height={teaserImage.height!}
+                />
+              </div>
+              <div class="mt-1 mb-2 flex"></div>
+            </>
+          )}
+          <div class="flex flex-col justify-start items-start relative gap-3">
+            <h2 class="text-xl font-semibold text-left text-gray-600">
+              {teaserHeadline}
+            </h2>
+            <p class="text-base text-left text-gray-600">{teaserDesciption}</p>
             <div class="flex justify-start items-start">
               <div class="flex justify-center items-center relative overflow-hidden gap-2 rounded-md bg-white">
                 <p class="text-[15px] font-semibold text-center text-blue-900">
@@ -47,8 +54,8 @@ export const ArticleCard = component$<IGenBlogArticle>(
                 </svg>
               </div>
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     );
   }

@@ -16,7 +16,7 @@ export const AssetWithDescription = component$<IGenAsset>(
               height={height}
             />
             {description && (
-              <label class="text-gray-400 mt-3 text-center block text-xs">
+              <label class="text-gray-600 mt-3 text-center block text-xs">
                 {description}
               </label>
             )}

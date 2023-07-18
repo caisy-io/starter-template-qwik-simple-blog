@@ -44,7 +44,7 @@ export const NewsletterSignup = component$<IGenNewsletterSignup>(
             </div>
           </form>
           <div class="flex flex-col justify-start items-start relative gap-1">
-            <p class="text-xs text-center text-gray-400">
+            <p class="text-xs text-center text-gray-600">
               By subscribing you accept to receive recurring newsletter emails
             </p>
           </div>
