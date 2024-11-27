@@ -59,7 +59,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [caisy documentation](https://caisy.io/developer/docs)
-Feel free to check [Next.js documentation](https://nextjs.org/docs)
+Feel free to check [Qwik documentation](https://qwik.dev/docs/)
 
 ## Using this template as Static Site Generator (Node.js)
 This command will generate html files for all pages in the dist folder. The downside with this approach is that you have to rebuild on every content change in the cms. That is why we do not recommend this. But for some cases this might be a valid choice. 
