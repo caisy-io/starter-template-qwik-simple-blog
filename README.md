@@ -51,7 +51,7 @@ All commands are run from the root of the project, from a terminal:
 | Command                 | Action                                                   |
 | :---------------------- | :------------------------------------------------------- |
 | `npm install`           | Installs dependencies                                    |
-| `npm run start`         | Starts local dev server at `localhost:300`               |
+| `npm run start`         | Starts local dev server at `localhost:3000`               |
 | `npm run gen`           | Regenerates generated types and SDK                      |
 | `npm run gen:watch`     | Wachting changes and regenerates generated types and SDK |
 | `npm run build`         | Build your production site to `./dist/`                  |
